@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
         CalculateStrategy.cpp \
         ExplorerForm.cpp \
+        FileTableModel.cpp \
         FileTypesStrategy.cpp \
         FoldersStrategy.cpp \
         main.cpp
@@ -24,6 +25,7 @@ HEADERS += \
     CalculateStrategy.h \
     Data.h \
     ExplorerForm.h \
+    FileTableModel.h \
     FileTypesStrategy.h \
     FoldersSizeFunctions.h \
     FoldersStrategy.h

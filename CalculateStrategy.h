@@ -20,6 +20,7 @@ protected:
 class CalculateStrategy
 {
 public:
+    CalculateStrategy() = default;
     explicit CalculateStrategy(ICalculateStrategy* strategy) : strat(strategy) {}
     QList<Data> Calculate(const QString& path)
     {
@@ -27,7 +28,15 @@ public:
     }
     void setStrategy(ICalculateStrategy* calculate_strategy)
     {
+        if (strat) {
+            delete strat;
+        }
         strat = calculate_strategy;
+    }
+    ~CalculateStrategy() {
+        if (strat) {
+            delete strat;
+        }
     }
 private:
     ICalculateStrategy *strat;
