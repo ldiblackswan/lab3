@@ -19,9 +19,12 @@ public:
         Folders,
         Types
     };
-    void updateDataInModel();
+    void updateModelData();
     explicit ExplorerForm(QWidget *parent = nullptr);
     ~ExplorerForm();
+protected slots:
+    void changeGrouping(int index);
+    void selectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
 private:
     Ui::Explorer* ui;
     QFileSystemModel* tree_model;
@@ -33,5 +36,5 @@ private:
 };
 
 
-#endif // EXPLORERFORM_Hf // EXPLORER_H
+#endif // EXPLORERFORM_H
 

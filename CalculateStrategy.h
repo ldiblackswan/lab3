@@ -39,7 +39,7 @@ public:
         }
     }
 private:
-    ICalculateStrategy *strat;
+    ICalculateStrategy *strat = nullptr;
 };
 
 #endif // CALCULATESTRATEGY_H

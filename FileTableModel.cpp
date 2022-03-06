@@ -21,7 +21,7 @@ int FileTableModel::columnCount(const QModelIndex& parent) const
 
 QVariant FileTableModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || m_data.count() <= index.row()) {
+    if (!index.isValid() || m_data.count() <= index.row() || (role != Qt::DisplayRole && role != Qt::EditRole)) {
         return QVariant();
     }
     switch (index.column()) {
